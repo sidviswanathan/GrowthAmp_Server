@@ -266,3 +266,5 @@ Processing by TrackingController#create as */*
 WARNING: Can't verify CSRF token authenticity
 POST POST POST
 Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

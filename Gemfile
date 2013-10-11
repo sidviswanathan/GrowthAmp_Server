@@ -6,7 +6,16 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'unicorn', '4.6.0'
-gem 'mysql2', '0.3.13'
+
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'mysql2', '0.3.13'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
