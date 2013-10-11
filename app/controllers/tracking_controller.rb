@@ -14,6 +14,7 @@ class TrackingController < ApplicationController
   
   def create
     response_object = initialize_response_object
+    
     render :json => response_object.to_json
   end
   
