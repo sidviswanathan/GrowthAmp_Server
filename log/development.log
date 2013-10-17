@@ -4221,3 +4221,27 @@ Processing by SettingsController#show as HTML
   [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1[0m
   [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."id" = 1 LIMIT 1
 Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/1?secret=529720bd2ea1ca" for 127.0.0.1 at 2013-10-16 18:00:02 -0700
+Processing by SettingsController#show as HTML
+  Parameters: {"secret"=>"529720bd2ea1ca", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1ca' LIMIT 1[0m
+Filter chain halted as :authenticated rendered or redirected
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/settings/1?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-16 18:00:05 -0700
+Processing by SettingsController#show as HTML
+  Parameters: {"secret"=>"529720bd2ea1cd", "id"=>"1"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/settings/11?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-16 18:00:10 -0700
+Processing by SettingsController#show as HTML
+  Parameters: {"secret"=>"529720bd2ea1cd", "id"=>"11"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."id" = 11 LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)

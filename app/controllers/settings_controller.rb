@@ -18,7 +18,7 @@ class SettingsController < ApplicationController
   # POST /settings/
   def create
     response_object = ApplicationController.initialize_response_object
-    response_object[:details] = {:customer_id => @authenticated_customer.id}
+    response_object[:details] = {:customer_id => 1}
     render :json => response_object.to_json
   end
   

@@ -6,16 +6,12 @@ class Customer < ActiveRecord::Base
   
   def self.authenticate_api_request(secret)
     c = Customer.find_by_secret(secret)
-    if c      
-      if secret == c.secret
-        return c
-      else
-        return false  
-      end
-    else
-      return false   
+    if c 
+      return true 
+    else 
+      return false 
     end
   end  
   
-end
-
+end  
+        
