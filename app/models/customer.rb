@@ -8,12 +8,12 @@ class Customer < ActiveRecord::Base
     c = Customer.find_by_secret(secret)
     if c      
       if secret == c.secret
-        return c 
+        return c
       else
         return false  
       end
     else
-      return false    
+      return false   
     end
   end  
   
