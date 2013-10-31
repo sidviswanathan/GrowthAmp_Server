@@ -3,9 +3,9 @@ require 'logger'
 class SettingsController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
-  before_filter :authenticated
+  before_filter :authenticate
   
-  def authenticated
+  def authenticate
     @authenticated_customer = Customer.authenticate_api_request(params[:secret])
     if !@authenticated_customer
       response_object = ApplicationController.initialize_response_object

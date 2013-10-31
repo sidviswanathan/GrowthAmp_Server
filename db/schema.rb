@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20131013235409) do
     t.integer  "customer_id"
     t.integer  "user_id"
     t.integer  "session_id"
-    t.string   "pagekey"
+    t.string   "page_key"
     t.string   "type"
     t.string   "client_timestamp"
     t.string   "tracking_code"

@@ -4,7 +4,7 @@ class CreateTrackings < ActiveRecord::Migration
       t.belongs_to :customer
       t.belongs_to :user
       t.belongs_to :session
-      t.string :pagekey
+      t.string :page_key
       t.string :type
       t.string :client_timestamp
       t.string :tracking_code
