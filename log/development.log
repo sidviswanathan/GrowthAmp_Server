@@ -4310,3 +4310,165 @@ Migrating to CreateTrackings (20131013235409)
   [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
   [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started POST "/user?secret=529720bd2ea1cda" for 127.0.0.1 at 2013-10-31 16:54:52 -0700
+Processing by UserController#create as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cda"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cda' LIMIT 1[0m
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/settings?secret=529720bd2ea1cda" for 127.0.0.1 at 2013-10-31 16:55:07 -0700
+Processing by SettingsController#create as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cda"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cda' LIMIT 1
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/settings?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-31 16:56:40 -0700
+Processing by SettingsController#create as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1[0m
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-31 16:56:47 -0700
+Processing by UserController#create as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user?secret=529720bd2ea1ca" for 127.0.0.1 at 2013-10-31 16:56:54 -0700
+Processing by UserController#create as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1ca"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1ca' LIMIT 1[0m
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user?secret=529720bd2ea1cad" for 127.0.0.1 at 2013-10-31 16:56:57 -0700
+Processing by UserController#create as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cad"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cad' LIMIT 1
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/user/1?secret=529720bd2ea1cad" for 127.0.0.1 at 2013-10-31 16:58:06 -0700
+
+AbstractController::ActionNotFound (The action 'update' could not be found for UserController):
+  actionpack (3.2.12) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.12) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.12) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.12) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.12) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.12) lib/action_dispatch/routing/route_set.rb:601:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.12) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.12) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:405:in `_run__3894374305741961926__call__4366867382423015159__callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.12) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/sviswana/.rvm/rubies/ruby-1.9.3-p362/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/sviswana/.rvm/rubies/ruby-1.9.3-p362/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/sviswana/.rvm/rubies/ruby-1.9.3-p362/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/sviswana/.rvm/gems/ruby-1.9.3-p362@neweygem/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (1.7ms)
+
+
+Started PUT "/user/1?secret=529720bd2ea1cad" for 127.0.0.1 at 2013-10-31 16:58:44 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cad", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cad' LIMIT 1[0m
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/user/1" for 127.0.0.1 at 2013-10-31 16:59:31 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd", "id"=>"1"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/user/1?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-31 16:59:48 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd", "id"=>"1"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/user/1?secret=529720bd2ea1ca" for 127.0.0.1 at 2013-10-31 16:59:50 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1ca", "id"=>"1"}
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1ca' LIMIT 1
+Filter chain halted as :authenticate rendered or redirected
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/user/1?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-31 16:59:53 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/user/1?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-31 16:59:56 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/user/5?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-10-31 17:00:07 -0700
+Processing by UserController#update as */*
+  Parameters: {"yoyo"=>"toooo_value", "hi"=>"yo", "secret"=>"529720bd2ea1cd", "id"=>"5"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)

@@ -15,6 +15,7 @@ GrowthAmpServer::Application.routes.draw do
   
   resources :tracking
   resources :settings
+  resources :user
 
   # Sample resource route with options:
   #   resources :products do
