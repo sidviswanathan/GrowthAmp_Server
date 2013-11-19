@@ -15,7 +15,8 @@ class UserController < ApplicationController
   # POST /user/
   def create
     response_object = ApplicationController.initialize_response_object
-    response_object[:details] = {:user_id => 1}
+    user = User.create_user_record(params)
+    response_object[:details] = {:user_id => user.id}
     render :json => response_object.to_json
   end
   
@@ -24,6 +25,7 @@ class UserController < ApplicationController
     response_object = ApplicationController.initialize_response_object
     user = User.find_by_id(params[:id])
     if user
+      update_user = User.update_user_record(user,params)
       response_object[:details] = {:user_id => user.id}
     else
       response_object[:status] = "failure"
