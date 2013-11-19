@@ -7,8 +7,8 @@ class CreateSessions < ActiveRecord::Migration
       t.string :end_time
       t.text :invited_contacts
       t.string :invitation_url
-      t.integer :unique_invitation_clicks
-      t.integer :num_invitations
+      t.integer :invitation_clicks
+      t.integer :num_invited_contacts
       t.string :session_type
       t.timestamps
     end

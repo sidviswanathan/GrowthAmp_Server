@@ -13,9 +13,10 @@ GrowthAmpServer::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   
-  resources :tracking
   resources :settings
   resources :user
+  resources :session
+  resources :tracking
 
   # Sample resource route with options:
   #   resources :products do
