@@ -16,7 +16,8 @@ class SessionController < ApplicationController
   # POST /session/
   def create
     response_object = ApplicationController.initialize_response_object
-    response_object[:details] = {:session_id => rand(1..1000)}
+    session = Session.create_session_record(params)
+    response_object[:details] = {:session_id => session.id}
     render :json => response_object.to_json
   end
 
