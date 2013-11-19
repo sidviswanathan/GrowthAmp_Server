@@ -4,11 +4,13 @@ class Tracking < ActiveRecord::Base
   belongs_to :user
   belongs_to :session
   
+  def self.create_tracking_records(params)
+  end  
+  
   def self.store_tracking_data(params)
     # Loop throguh every tracking data and store each one in table 
     if params[:page_keys]
       page_keys_data = JSON.parse(params[:page_keys])
-
       if page_keys_data
         if page_keys_data.class == Array
           page_keys_data.each do |page_key|

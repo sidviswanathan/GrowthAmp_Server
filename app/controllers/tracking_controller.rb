@@ -18,7 +18,7 @@ class TrackingController < ApplicationController
   def create
     response_object = ApplicationController.initialize_response_object
     logger.info params
-    #Tracking.store_tracking_data(params)
+    Tracking.create_tracking_records(params)
     render :json => response_object.to_json
   end
 

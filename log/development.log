@@ -4731,3 +4731,11 @@ Processing by SessionController#create as */*
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "sessions" ("created_at", "customer_id", "end_time", "invitation_clicks", "invitation_url", "invited_contacts", "num_invited_contacts", "session_type", "start_time", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 19 Nov 2013 06:08:37 UTC +00:00], ["customer_id", nil], ["end_time", "232312"], ["invitation_clicks", nil], ["invitation_url", nil], ["invited_contacts", nil], ["num_invited_contacts", 12], ["session_type", "autoLaunch"], ["start_time", "12345632"], ["updated_at", Tue, 19 Nov 2013 06:08:37 UTC +00:00], ["user_id", nil]]
   [1m[35m (2.3ms)[0m  commit transaction
 Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/tracking?secret=529720bd2ea1cd" for 127.0.0.1 at 2013-11-18 23:52:56 -0800
+Processing by TrackingController#create as */*
+  Parameters: {"customer_id"=>"1", "user_id"=>"5", "session_id"=>"34", "secret"=>"529720bd2ea1cd"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers" WHERE "customers"."secret" = '529720bd2ea1cd' LIMIT 1[0m
+{"customer_id"=>"1", "user_id"=>"5", "session_id"=>"34", "secret"=>"529720bd2ea1cd", "action"=>"create", "controller"=>"tracking"}
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 1.2ms)
